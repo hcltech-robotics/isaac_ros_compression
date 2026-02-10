@@ -70,7 +70,7 @@ const nitros::NitrosPublisherSubscriberConfigMap CONFIG_MAP = {
   {INPUT_COMPONENT_KEY,
     {
       .type = nitros::NitrosPublisherSubscriberType::NEGOTIATED,
-      .qos = rclcpp::QoS(10),
+      .qos = rclcpp::SensorDataQoS(),          // <-- change
       .compatible_data_format = INPUT_DEFAULT_FORMAT,
       .topic_name = INPUT_TOPIC_NAME,
     }
@@ -78,7 +78,7 @@ const nitros::NitrosPublisherSubscriberConfigMap CONFIG_MAP = {
   {OUTPUT_COMPONENT_KEY,
     {
       .type = nitros::NitrosPublisherSubscriberType::NEGOTIATED,
-      .qos = rclcpp::QoS(10),
+      .qos = rclcpp::QoS(10),          // <-- change
       .compatible_data_format = OUTPUT_DEFAULT_FORMAT,
       .topic_name = OUTPUT_TOPIC_NAME,
       .frame_id_source_key = INPUT_COMPONENT_KEY
